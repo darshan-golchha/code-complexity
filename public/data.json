@@ -1,0 +1,228 @@
+{
+  "metrics": {
+      "component": {
+          "key": "buildpiper_api-ai",
+          "name": "buildpiper_api-ai",
+          "qualifier": "TRK",
+          "measures": [
+              {
+                  "metric": "comment_lines",
+                  "value": "3342"
+              },
+              {
+                  "metric": "security_remediation_effort",
+                  "value": "0",
+                  "bestValue": true
+              },
+              {
+                  "metric": "comment_lines_density",
+                  "value": "4.8",
+                  "bestValue": false
+              },
+              {
+                  "metric": "duplicated_lines",
+                  "value": "76769",
+                  "bestValue": false
+              },
+              {
+                  "metric": "duplicated_lines_density",
+                  "value": "96.0",
+                  "bestValue": false
+              },
+              {
+                  "metric": "sqale_debt_ratio",
+                  "value": "0.7",
+                  "bestValue": false
+              },
+              {
+                  "metric": "file_complexity",
+                  "value": "14.7"
+              },
+              {
+                  "metric": "code_smells",
+                  "value": "1950",
+                  "bestValue": false
+              },
+              {
+                  "metric": "lines",
+                  "value": "80003"
+              },
+              {
+                  "metric": "duplicated_blocks",
+                  "value": "956",
+                  "bestValue": false
+              },
+              {
+                  "metric": "info_violations",
+                  "value": "77",
+                  "bestValue": false
+              },
+              {
+                  "metric": "reliability_rating",
+                  "value": "5.0",
+                  "bestValue": false
+              },
+              {
+                  "metric": "files",
+                  "value": "646"
+              },
+              {
+                  "metric": "coverage",
+                  "value": "0.0",
+                  "bestValue": false
+              },
+              {
+                  "metric": "violations",
+                  "value": "2045",
+                  "bestValue": false
+              },
+              {
+                  "metric": "classes",
+                  "value": "1943"
+              },
+              {
+                  "metric": "line_coverage",
+                  "value": "0.0",
+                  "bestValue": false
+              },
+              {
+                  "metric": "bugs",
+                  "value": "95",
+                  "bestValue": false
+              },
+              {
+                  "metric": "reliability_remediation_effort",
+                  "value": "194",
+                  "bestValue": false
+              },
+              {
+                  "metric": "sqale_index",
+                  "value": "14491",
+                  "bestValue": false
+              },
+              {
+                  "metric": "ncloc",
+                  "value": "65771"
+              },
+              {
+                  "metric": "new_vulnerabilities",
+                  "period": {
+                      "index": 1,
+                      "value": "0",
+                      "bestValue": true
+                  }
+              },
+              {
+                  "metric": "major_violations",
+                  "value": "1298",
+                  "bestValue": false
+              },
+              {
+                  "metric": "lines_to_cover",
+                  "value": "47762"
+              },
+              {
+                  "metric": "new_violations",
+                  "period": {
+                      "index": 1,
+                      "value": "0",
+                      "bestValue": true
+                  }
+              },
+              {
+                  "metric": "new_code_smells",
+                  "period": {
+                      "index": 1,
+                      "value": "0",
+                      "bestValue": true
+                  }
+              },
+              {
+                  "metric": "functions",
+                  "value": "3113"
+              },
+              {
+                  "metric": "complexity",
+                  "value": "9394"
+              },
+              {
+                  "metric": "vulnerabilities",
+                  "value": "0",
+                  "bestValue": true
+              },
+              {
+                  "metric": "blocker_violations",
+                  "value": "1",
+                  "bestValue": false
+              },
+              {
+                  "metric": "minor_violations",
+                  "value": "657",
+                  "bestValue": false
+              },
+              {
+                  "metric": "security_rating",
+                  "value": "1.0",
+                  "bestValue": true
+              },
+              {
+                  "metric": "new_bugs",
+                  "period": {
+                      "index": 1,
+                      "value": "0",
+                      "bestValue": true
+                  }
+              },
+              {
+                  "metric": "uncovered_lines",
+                  "value": "47762",
+                  "bestValue": false
+              },
+              {
+                  "metric": "new_lines",
+                  "period": {
+                      "index": 1,
+                      "value": "20"
+                  }
+              },
+              {
+                  "metric": "alert_status",
+                  "value": "ERROR"
+              },
+              {
+                  "metric": "critical_violations",
+                  "value": "12",
+                  "bestValue": false
+              }
+          ]
+      }
+  },
+  "payload": {
+      "diff_content": "diff --git a/default/views.py b/default/views.py\nindex 57786800..6e0e97ae 100644\n--- a/default/views.py\n+++ b/default/views.py\n@@ -2912,19 +2912,18 @@ class SystemHealthCheck(APIView):\n             ssh_client.close()\n             data = {\n                 'hostname': hostname,\n-                'ram_used_gb':ram_used_gb,\n+                'ram_used_in_gb':ram_used_gb,\n                 'ram_utilization': ram_utilization,\n-                'allocated_ram_gb':allocated_ram_gb,\n+                'ram_allocated_in_gb':allocated_ram_gb,\n                 'cpu_utilization': cpu_utilization,\n                 'cpu_allocated':cpu_allocated_percentage,\n                 'cpu_freq': cpu_freq,\n                 'total_memory': allocated_ram_bytes,\n                 'cores': cores,\n                 'threads': threads,\n-                'total_disk_storage_gb': total_disk_storage_gb,\n-                'used_disk_space_gb':used_disk_space_gb,\n-                'free_disk_space_gb':free_disk_space_gb\n-\n+                'total_disk_storage_in_gb': total_disk_storage_gb,\n+                'used_disk_space_in_gb':used_disk_space_gb,\n+                'free_disk_space_in_gb':free_disk_space_gb\n             }\n             return data\n@@ -2959,18 +2958,18 @@ class SystemHealthCheck(APIView):\n         cpu_allocated_percentage = round(cpu_utilization / cores, 2)\n         data = {\n                 'hostname': hostname,\n-                'ram_used_gb':ram_used_gb,\n+                'ram_used_in_gb':ram_used_gb,\n                 'ram_utilization': ram_utilization,\n-                'allocated_ram_gb':allocated_ram_gb,\n+                'ram_allocated_in_gb':allocated_ram_gb,\n                 'cpu_utilization': cpu_utilization,\n                 'cpu_allocated':cpu_allocated_percentage,\n                 'cpu_freq': cpu_freq,\n                 'total_memory': allocated_ram_bytes,\n                 'cores': cores,\n                 'threads': threads,\n-                'total_disk_storage_gb': total_disk_storage_gb,\n-                'used_disk_space_gb':used_disk_space_gb,\n-                'free_disk_space_gb':free_disk_space_gb\n+                'total_disk_storage_in_gb': total_disk_storage_gb,\n+                'used_disk_space_in_gb':used_disk_space_gb,\n+                'free_disk_space_in_gb':free_disk_space_gb\n             }\n         return data\n\\ No newline at end of file"
+  },
+  "commitHash": "cbcf6facaeff97d1acd57884594225e323b1d2fa",
+  "commitDiff": {
+      "diff": "diff --git a/default/views.py b/default/views.py\nindex 1c57c672..de09d86f 100644\n--- a/default/views.py\n+++ b/default/views.py\n@@ -324,7 +324,8 @@ class PipelineLatestInstance(APIView):\n                     return Response({\"is_pipeline_rerun_possible\":False,'status':\"pipeline is not letest\"},status=status.oHTTP_200_OK) \n \n             else:\n-                pipeline_instances=PipelineInstance.objects.filter(pipeline=pipeline_obj)\n+                # pipeline_instances=PipelineInstance.objects.filter(pipeline=pipeline_obj)\n+                # Line Removed for testing ai-supervisor\n                 \n                 if not pipeline_instances:\n                     return Response({\"is_pipeline_rerun_possible\":False,'status':\"pipeline is not letest\"},status=status.HTTP_200_OK) \n"
+  },
+  "analytics": {
+      "resultSeverities": 375.81818181818153,
+      "reviewSeverities": 7.0,
+      "results": [
+          {
+              "filename": "default/views.py",
+              "lowest": 0,
+              "low": 0,
+              "medium": 29,
+              "high": 8,
+              "highest": 5,
+              "severity": 375.81818181818153
+          }
+      ],
+      "reviews": [
+          "\n    ## Code Review:\n\nThe diff removes a line of code that filters `PipelineInstance` objects based on the `pipeline` object. While the comment suggests this is for testing purposes, it's concerning without more context. \n\n**Potential issues:**\n\n* **Functionality Loss:**  Removing the filter might lead to unexpected results if the code relies on filtering `PipelineInstance` objects by their associated `pipeline`. This could result in incorrect data being processed or displayed.\n* **Testing Impact:** It's unclear if the removal of this line actually benefits testing. If this line is crucial for a specific test case, removing it would make testing unreliable.\n* **Lack of Explanation:** The comment \"Line Removed for testing ai-supervisor\" is insufficient. It doesn't explain what \"ai-supervisor\" is, what the intended impact of removing the line is, or what alternative logic is being used for testing.\n\n**Severity:** [severity: 7/10]\n\nThis issue is significant because it introduces the potential for functional errors.  Without more context, it's hard to assess the true impact of the change. The lack of explanation makes it difficult to understand the intention and potentially troubleshoot any problems arising from the removal. \n\n"
+      ]
+  },
+  "sonarSeverity": 49.4246546961326,
+  "masterSeverity": 111.48509584798252,
+  "complexity": 460.0
+}
