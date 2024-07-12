@@ -1,0 +1,167 @@
+/* sonar.css */
+
+/* Global styles */
+body {
+    font-family: 'Courier New', Courier, monospace; /* Monospaced font */
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* Styles for master severity */
+.master-severity {
+    background-color: #ffcc00;
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+/* Styles for metric boxes */
+.metric-box {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.metric-name {
+    font-weight: bold;
+}
+
+.metric-value {
+    margin-left: 10px;
+}
+
+/* Styles for code review */
+.code-review {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    max-width: 100%; /* Ensures the review text doesn't overflow horizontally */
+    overflow-wrap: break-word; /* Allows words to break if they exceed container width */
+    word-wrap: break-word; /* Fallback for older browsers */
+    word-break: break-word; /* Handles long words and URLs */
+    white-space: pre-wrap; /* Preserves formatting and respects line breaks */
+    font-family: monospace; /* Uses monospaced font for better readability of code snippets */
+    font-size:medium;
+}
+
+.code-review pre {
+    text-wrap: wrap;
+    text-wrap-mode: wraps;
+}
+
+.code-review code{
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: monospace;
+    font-size: medium;
+    /* Adding conventional code markdown design looks */
+    background-color: rgb(190, 190, 190);
+    border-radius: 5px;
+    width: fit-content;
+    text-decoration: underline;
+}
+/* Styles for result and review severities */
+.result-severity {
+    background-color: #ffcc00;
+    color: #333;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.review-severity {
+    background-color: #3399ff;
+    color: #fff;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.metric-parent{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.upload-button {
+    background-color: #3399ff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    margin: 20px auto; /* Center the loader */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.code-diff{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    text-align: left;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    max-width: 100%; /* Ensures the review text doesn't overflow horizontally */
+    overflow-wrap: break-word; /* Allows words to break if they exceed container width */
+    word-wrap: break-word; /* Fallback for older browsers */
+    word-break: break-word; /* Handles long words and URLs */
+    white-space: pre-wrap; /* Preserves formatting and respects line breaks */
+    font-family: monospace; /* Uses monospaced font for better readability of code snippets */
+    font-size:medium;
+}
+
+.diff-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
